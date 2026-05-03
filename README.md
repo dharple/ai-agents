@@ -7,7 +7,10 @@ Tuned for PHP and NPM.  Initially created using Claude.
 
 ---
 
-After installing the agent, use the following processes:
+Install the agent:
+
+1. Symlink the markdown file to `~/.claude/agents/`.
+2. Consider adding `diff` and `find` to allowedTools in `~/.claude/settings.json`.
 
 ---
 
@@ -20,12 +23,15 @@ Process for composer:
 5. Run `claude --agent dependency-security-auditor`.
 6. Tell the agent:
 
-   I have made a backup copy of vendor in vendor-old, and I ran composer
-   install without scripts or plugins.  Please review the changes between
-   vendor-old and vendor, using composer.lock as a reference, and look for any
-   potential security risks.
+   I ran composer install without scripts or plugins.  I have made a backup
+   copy of vendor in vendor-old.  Please review the changes between vendor-old
+   and vendor, using composer.lock as a reference, and look for any potential
+   security risks.
+
+   [INSERT ANY NOTES FROM PREVIOUS RUNS]
 
 7. Review the agent's report.
 8. If needed, review the changes yourself, e.g. `diff -rNwBb vendor-old vendor`.
 9. Run `composer install`, to let any scripts and plugins run as needed.
 10. Commit your changes.
+11. Clean up `vendor-old`.
