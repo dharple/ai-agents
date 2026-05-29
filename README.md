@@ -35,3 +35,14 @@ Process for composer:
 9. Run `composer install`, to let any scripts and plugins run as needed.
 10. Commit your changes.
 11. Clean up `vendor-old`.
+
+### Analyze Security Findings
+
+`security-auditor.md` - Agent for reviewing the code itself.  Tuned for PHP,
+JavaScript, Bash, and C.  Initially created using Claude.
+
+---
+
+Install the agent:
+
+1. Symlink the markdown file to `~/.claude/agents/`.
