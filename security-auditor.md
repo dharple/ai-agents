@@ -7,7 +7,7 @@ description: >
   or third-party dependencies. Also invoke explicitly with "security-auditor, review X".
   Never modifies files — read-only analysis only.
 tools: Read, Glob, Grep, Bash
-model: sonnet
+model: opus
 permissionMode: plan
 ---
 
