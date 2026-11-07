@@ -1,13 +1,22 @@
-# Dependency Security Auditor
+# Dependency Security Auditor — Composer
 
-We are reviewing changes to 3rd party dependencies.
+I'm reviewing updates to 3rd party PHP dependencies. Before updating, I copied
+`vendor` to `vendor-old`. I then ran `composer update --no-install` followed by
+`composer install --no-scripts --no-plugins`, so no package scripts or plugins
+have executed yet.
 
-I have made a backup copy of vendor in vendor-old.
+Please:
 
-I ran `composer update --no-install`, then `composer install --no-scripts --no-plugins`.
+1. Use `git diff composer.lock` to identify added, removed, and updated packages.
+2. Review the changes between `vendor-old` and `vendor` for those packages.
+   Treat newly added packages (including new transitive dependencies) with
+   extra scrutiny.
+3. Check any `scripts` or `plugin` entries in the updated packages'
+   composer.json, since they will run when I do a normal `composer install`.
 
-Please review the changes between vendor-old and vendor, using composer.lock as
-a reference, and look for any potential security risks.
+Report one line per changed package (old → new version, verdict:
+safe / needs review / do not install), followed by details for anything that
+isn't "safe".
 
-Please review the changes in composer.lock for any security issues.  I copied
-the vendor dir out of the way, to vendor-old, before running composer update.
+Notes from previous runs:
+[INSERT NOTES OR DELETE THIS SECTION]

@@ -8,7 +8,7 @@ A collection of Claude Code subagent definitions (Markdown with YAML frontmatter
 
 - `dependency-security-auditor.md` — audits third-party dependency updates (vendor/node_modules diffs, lock files) for malicious code. Tuned for PHP/Composer and NPM.
 - `security-auditor.md` — audits first-party source code for vulnerabilities. Tuned for PHP, JavaScript, Bash, and C.
-- `prompts.md` — scratch collection of user prompts used to drive the agents (work in progress).
+- `prompts.md` — the user prompts given to the agents (referenced from the README workflow).
 - `README.md` — install instructions and the step-by-step Composer review workflow.
 
 ## Installation / live editing

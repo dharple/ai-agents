@@ -21,15 +21,8 @@ Process for composer:
 3. Run `composer update --no-install`.
 4. Run `composer install --no-scripts --no-plugins`.
 5. Run `claude --agent dependency-security-auditor`.
-6. Tell the agent:
-
-   I ran composer install without scripts or plugins.  I have made a backup
-   copy of vendor in vendor-old.  Please review the changes between vendor-old
-   and vendor, using composer.lock as a reference, and look for any potential
-   security risks.
-
-   [INSERT ANY NOTES FROM PREVIOUS RUNS]
-
+6. Give the agent the Composer prompt from [`prompts.md`](prompts.md), filling
+   in any notes from previous runs.
 7. Review the agent's report.
 8. If needed, review the changes yourself, e.g. `diff -rNwBb vendor-old vendor`.
 9. Run `composer install`, to let any scripts and plugins run as needed.
